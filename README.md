@@ -15,16 +15,20 @@ It scans listening TCP sockets with OS APIs, filters for likely local web dev se
 
 ## Install
 
+Install the macOS app into Applications:
+
 ```sh
 brew tap 6space7/end-port https://github.com/6space7/end-port
 brew trust --tap 6space7/end-port
-brew install end-port
+brew install --cask end-port
 ```
 
-Then start the tray app:
+Then open **End Port.app** from Applications. It runs as a menu bar app, so it appears in the menu bar rather than the Dock.
+
+For the command-line binary instead:
 
 ```sh
-end-port
+brew install end-port
 ```
 
 ## Run from Source
@@ -50,7 +54,7 @@ The release binary will be at `target/release/end-port`.
 
 ## Homebrew Tap
 
-The Homebrew formula lives in this same repository at `Formula/end-port.rb`. Because this is not a `homebrew-*` tap repo, use the explicit tap URL shown above.
+The Homebrew cask and formula live in this same repository at `Casks/end-port.rb` and `Formula/end-port.rb`. Because this is not a `homebrew-*` tap repo, use the explicit tap URL shown above.
 
 ## Linux Notes
 

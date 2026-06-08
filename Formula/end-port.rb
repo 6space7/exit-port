@@ -1,8 +1,8 @@
 class EndPort < Formula
   desc "Tiny native tray utility for ending local development ports"
   homepage "https://github.com/6space7/end-port"
-  url "https://github.com/6space7/end-port/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "9241a544a2fc9e5b32239a32e50fe61cd068c6d43c7684d755d68914b95197c7"
+  url "https://github.com/6space7/end-port/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "SOURCE_SHA_PLACEHOLDER"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/6space7/end-port.git", branch: "main"
 
