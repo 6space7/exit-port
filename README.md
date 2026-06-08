@@ -48,7 +48,7 @@ The release binary will be at `target/release/exit-port`.
 
 ## Homebrew Tap
 
-This repository is also the Homebrew tap. After a release is tagged, the formula lives at `Formula/exit-port.rb`.
+Homebrew installs from the companion tap at [`6space7/homebrew-exit-port`](https://github.com/6space7/homebrew-exit-port). The formula points back to tagged source releases in this repository.
 
 ## Linux Notes
 
