@@ -23,7 +23,7 @@ brew trust --tap 6space7/end-port
 brew install --cask end-port
 ```
 
-Then open **End Port.app** from Applications. It runs as a menu bar app, so it appears in the menu bar rather than the Dock.
+Then open **End Port.app** from Applications. It runs as a menu bar app, so it appears in the menu bar rather than the Dock. The app is ad-hoc signed for now; if macOS blocks the first launch, Control-click the app in Applications and choose **Open**.
 
 For the command-line binary instead:
 

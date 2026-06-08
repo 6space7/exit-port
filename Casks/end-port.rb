@@ -21,4 +21,9 @@ cask "end-port" do
     "~/Library/Preferences/com.6space7.end-port.plist",
     "~/Library/Saved Application State/com.6space7.end-port.savedState",
   ]
+
+  caveats <<~EOS
+    End Port is ad-hoc signed. If macOS blocks the first launch, Control-click
+    /Applications/End Port.app and choose Open.
+  EOS
 end
