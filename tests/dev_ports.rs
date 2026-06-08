@@ -1,4 +1,4 @@
-use exit_port::{
+use end_port::{
     format_menu_title, format_port_label, format_status_line, plan_dev_ports, ListenerPort,
     PortScope,
 };
@@ -66,7 +66,7 @@ fn format_port_label_includes_port_process_and_pid() {
 
 #[test]
 fn presentation_summarizes_menu_state_cleanly() {
-    assert_eq!(format_menu_title(0), "Exit Port");
+    assert_eq!(format_menu_title(0), "End Port");
     assert_eq!(format_status_line(0), "No development servers running");
     assert_eq!(format_status_line(1), "1 development server running");
     assert_eq!(format_status_line(3), "3 development servers running");

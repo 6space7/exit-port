@@ -30,7 +30,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
         .with_icon(icon::tray_icon()?)
         .with_icon_as_template(cfg!(target_os = "macos"))
         .with_menu(Box::new(menu.clone()))
-        .with_tooltip("Exit Port")
+        .with_tooltip("End Port")
         .build()?;
 
     let proxy = event_loop.create_proxy();

@@ -1,6 +1,6 @@
 use std::{error::Error, ffi::OsString};
 
-use exit_port::{render_cli_table, scan_dev_ports, stop_process};
+use end_port::{render_cli_table, scan_dev_ports, stop_process};
 
 pub enum Command {
     Tray,
@@ -37,12 +37,12 @@ pub fn stop_pid(pid: u32) -> Result<(), Box<dyn Error>> {
 }
 
 pub fn print_help() {
-    println!("Exit Port");
+    println!("End Port");
     println!();
     println!("Usage:");
-    println!("  exit-port              Start the tray/menu-bar utility");
-    println!("  exit-port --list       Print detected web dev ports");
-    println!("  exit-port --stop-pid N Stop one process by pid");
+    println!("  end-port              Start the tray/menu-bar utility");
+    println!("  end-port --list       Print detected web dev ports");
+    println!("  end-port --stop-pid N Stop one process by pid");
 }
 
 #[allow(dead_code)]

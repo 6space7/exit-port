@@ -1,7 +1,7 @@
 use crate::model::ListenerPort;
 
 pub fn format_menu_title(_count: usize) -> String {
-    "Exit Port".to_string()
+    "End Port".to_string()
 }
 
 pub fn format_status_line(count: usize) -> String {

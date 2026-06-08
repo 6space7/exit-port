@@ -1,6 +1,6 @@
 use std::{collections::HashMap, thread, time::Duration};
 
-use exit_port::{
+use end_port::{
     format_menu_title, format_port_label, format_status_line, scan_dev_ports, stop_process,
     ListenerPort,
 };
@@ -101,7 +101,7 @@ impl TrayApp {
 
         self.add_separator();
         self.add_item(MENU_REFRESH_ID, "Refresh", true);
-        self.add_item(MENU_QUIT_ID, "Quit Exit Port", true);
+        self.add_item(MENU_QUIT_ID, "Quit End Port", true);
 
         let _ = self.tray_icon.set_tooltip(Some(status));
         self.tray_icon
@@ -109,13 +109,13 @@ impl TrayApp {
     }
 
     fn render_scan_error(&mut self, error: String) {
-        self.add_item("title", "Exit Port", false);
+        self.add_item("title", "End Port", false);
         self.add_item("error-title", "Scan failed", false);
         self.add_item("error", error, false);
         self.add_separator();
         self.add_item(MENU_REFRESH_ID, "Refresh", true);
-        self.add_item(MENU_QUIT_ID, "Quit Exit Port", true);
-        let _ = self.tray_icon.set_tooltip(Some("Exit Port scan failed"));
+        self.add_item(MENU_QUIT_ID, "Quit End Port", true);
+        let _ = self.tray_icon.set_tooltip(Some("End Port scan failed"));
         self.tray_icon.set_title(None::<String>);
     }
 
@@ -128,14 +128,14 @@ impl TrayApp {
     fn add_item(&self, id: &str, text: impl AsRef<str>, enabled: bool) {
         let item = MenuItem::with_id(id, text.as_ref(), enabled, None);
         if let Err(error) = self.menu.append(&item) {
-            eprintln!("exit-port: failed to add menu item: {error}");
+            eprintln!("end-port: failed to add menu item: {error}");
         }
     }
 
     fn add_separator(&self) {
         let separator = PredefinedMenuItem::separator();
         if let Err(error) = self.menu.append(&separator) {
-            eprintln!("exit-port: failed to add menu separator: {error}");
+            eprintln!("end-port: failed to add menu separator: {error}");
         }
     }
 }

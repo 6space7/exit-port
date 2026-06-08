@@ -7,7 +7,7 @@ use cli::{parse_command, Command};
 
 fn main() {
     if let Err(error) = run() {
-        eprintln!("exit-port: {error}");
+        eprintln!("end-port: {error}");
         std::process::exit(1);
     }
 }

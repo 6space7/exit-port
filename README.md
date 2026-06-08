@@ -1,6 +1,6 @@
-# Exit Port
+# End Port
 
-Exit Port is a tiny native tray/menu-bar utility for stopping stuck local web development ports.
+End Port is a tiny native tray/menu-bar utility for stopping stuck local web development ports.
 
 It scans listening TCP sockets with OS APIs, filters for likely local web dev servers, shows them in the system tray, and lets you stop the owning process from the menu.
 
@@ -16,13 +16,14 @@ It scans listening TCP sockets with OS APIs, filters for likely local web dev se
 ## Install
 
 ```sh
-brew install 6space7/exit-port/exit-port
+brew tap 6space7/end-port https://github.com/6space7/end-port
+brew install end-port
 ```
 
 Then start the tray app:
 
 ```sh
-exit-port
+end-port
 ```
 
 ## Run from Source
@@ -44,11 +45,11 @@ cargo run -- --stop-pid 12345
 cargo build --release
 ```
 
-The release binary will be at `target/release/exit-port`.
+The release binary will be at `target/release/end-port`.
 
 ## Homebrew Tap
 
-Homebrew installs from the companion tap at [`6space7/homebrew-exit-port`](https://github.com/6space7/homebrew-exit-port). The formula points back to tagged source releases in this repository.
+The Homebrew formula lives in this same repository at `Formula/end-port.rb`. Because this is not a `homebrew-*` tap repo, use the explicit tap URL shown above.
 
 ## Linux Notes
 
