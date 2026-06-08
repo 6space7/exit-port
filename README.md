@@ -17,6 +17,7 @@ It scans listening TCP sockets with OS APIs, filters for likely local web dev se
 
 ```sh
 brew tap 6space7/end-port https://github.com/6space7/end-port
+brew trust --tap 6space7/end-port
 brew install end-port
 ```
 
