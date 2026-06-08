@@ -1,6 +1,6 @@
 cask "end-port" do
   version "0.3.0"
-  sha256 "APP_SHA_PLACEHOLDER"
+  sha256 "4674f597b9997a35b2ab8554e1f45401800905122edbc0eb7eb9f434d8ea3b27"
 
   url "https://github.com/6space7/end-port/releases/download/v#{version}/End-Port-#{version}-macos-arm64.zip",
       verified: "github.com/6space7/end-port/"
@@ -9,7 +9,7 @@ cask "end-port" do
   homepage "https://github.com/6space7/end-port"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "End Port.app"
 
