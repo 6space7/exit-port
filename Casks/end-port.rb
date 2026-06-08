@@ -1,6 +1,6 @@
 cask "end-port" do
-  version "0.3.0"
-  sha256 "4674f597b9997a35b2ab8554e1f45401800905122edbc0eb7eb9f434d8ea3b27"
+  version "0.4.0"
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
 
   url "https://github.com/6space7/end-port/releases/download/v#{version}/End-Port-#{version}-macos-arm64.zip"
   name "End Port"
@@ -21,9 +21,4 @@ cask "end-port" do
     "~/Library/Preferences/com.6space7.end-port.plist",
     "~/Library/Saved Application State/com.6space7.end-port.savedState",
   ]
-
-  caveats <<~EOS
-    End Port is ad-hoc signed. If macOS blocks the first launch, Control-click
-    /Applications/End Port.app and choose Open.
-  EOS
 end

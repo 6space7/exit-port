@@ -3,6 +3,7 @@ mod model;
 mod presentation;
 mod process_control;
 mod scanner;
+mod updater;
 
 pub use filter::plan_dev_ports;
 pub use model::{ExitPortError, ListenerPort, PortScope, Result};
@@ -11,3 +12,7 @@ pub use presentation::{
 };
 pub use process_control::stop_process;
 pub use scanner::{scan_dev_ports, scan_listening_tcp_ports};
+pub use updater::{
+    check_for_updates, classify_release_update, ReleaseMetadata, UpdateAvailability, UpdateError,
+    UpdateInfo,
+};

@@ -26,6 +26,18 @@ fn is_likely_dev_port(port: &ListenerPort) -> bool {
     }
 
     let process = port.process_name.to_ascii_lowercase();
+    if is_end_port_process(&process) {
+        return false;
+    }
+
+    if port
+        .command
+        .as_deref()
+        .is_some_and(command_looks_like_end_port)
+    {
+        return false;
+    }
+
     if is_infra_process(&process) || is_infra_port(port.port) {
         return false;
     }
@@ -91,10 +103,11 @@ fn is_infra_process(process: &str) -> bool {
 }
 
 fn is_common_dev_port(port: u16) -> bool {
-    matches!(
-        port,
-        1024..=9999 | 19000..=19006 | 24678 | 30000..=30010 | 49152..=65535
-    )
+    matches!(port, 1024..=9999 | 19000..=19006 | 24678 | 30000..=30010)
+}
+
+fn is_end_port_process(process: &str) -> bool {
+    matches!(process, "end-port" | "end port")
 }
 
 fn is_common_dev_process(process: &str) -> bool {
@@ -160,4 +173,12 @@ fn command_looks_dev(command: &str) -> bool {
     ]
     .iter()
     .any(|needle| command.contains(needle))
+}
+
+fn command_looks_like_end_port(command: &str) -> bool {
+    let command = command.to_ascii_lowercase();
+    command.contains("/end port.app/contents/macos/end-port")
+        || command.contains("\\end port.app\\contents\\macos\\end-port")
+        || command.contains("/target/debug/end-port")
+        || command.contains("/target/release/end-port")
 }

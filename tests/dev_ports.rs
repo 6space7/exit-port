@@ -57,6 +57,20 @@ fn plan_dev_ports_excludes_regular_desktop_app_listeners() {
 }
 
 #[test]
+fn plan_dev_ports_excludes_end_port_itself() {
+    let planned = plan_dev_ports(vec![port(38127, 1204, "end-port")]);
+
+    assert_eq!(planned, Vec::new());
+}
+
+#[test]
+fn plan_dev_ports_excludes_unknown_ephemeral_ports() {
+    let planned = plan_dev_ports(vec![port(53211, 0, "unknown")]);
+
+    assert_eq!(planned, Vec::new());
+}
+
+#[test]
 fn format_port_label_includes_port_process_and_pid() {
     assert_eq!(
         format_port_label(&port(5173, 77, "vite")),

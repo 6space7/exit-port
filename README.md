@@ -11,6 +11,7 @@ It scans listening TCP sockets with OS APIs, filters for likely local web dev se
 - Avoids obvious infrastructure services such as Postgres, Redis, MongoDB, MySQL, SSH, and Docker.
 - Stops a port by terminating its owning process from a compact tray menu.
 - Auto-refreshes every 5 seconds and includes a manual Refresh menu item.
+- Checks GitHub releases for updates from the menu bar and CLI.
 - Includes CLI commands for quick inspection and scripting.
 
 ## Install
@@ -23,7 +24,13 @@ brew trust --tap 6space7/end-port
 brew install --cask end-port
 ```
 
-Then open **End Port.app** from Applications. It runs as a menu bar app, so it appears in the menu bar rather than the Dock. The app is ad-hoc signed for now; if macOS blocks the first launch, Control-click the app in Applications and choose **Open**.
+Then open **End Port.app** from Applications. It runs as a menu bar app, so it appears in the menu bar rather than the Dock. Release builds are Developer ID signed and notarized on macOS.
+
+Update the cask with:
+
+```sh
+brew upgrade --cask end-port
+```
 
 For the command-line binary instead:
 
@@ -42,6 +49,7 @@ The default command starts the tray/menu-bar utility.
 ```sh
 cargo run -- --list
 cargo run -- --stop-pid 12345
+cargo run -- --check-updates
 ```
 
 ## Build

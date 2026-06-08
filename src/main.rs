@@ -17,6 +17,7 @@ fn run() -> Result<(), Box<dyn Error>> {
         Command::Tray => tray::run(),
         Command::List => cli::list_ports(),
         Command::StopPid(pid) => cli::stop_pid(pid),
+        Command::CheckUpdates => cli::check_updates(),
         Command::Help => {
             cli::print_help();
             Ok(())
