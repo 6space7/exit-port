@@ -1,6 +1,6 @@
 cask "end-port" do
   version "0.4.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "9019b00f12c616d1c42f74ae20e7c4e3346859a6562fa58d2a8fb85a2c165847"
 
   url "https://github.com/6space7/end-port/releases/download/v#{version}/End-Port-#{version}-macos-arm64.zip"
   name "End Port"
